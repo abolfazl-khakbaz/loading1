@@ -6,12 +6,6 @@ A responsive feature built with HTML, CSS, and vanilla JavaScript. This componen
 
 ---
 
-## 🔗 Live Demo
-
-👉 [Click here to view the live demo] (https://loading1-bcyve7uoc-abolfazl-khakbazs-projects.vercel.app)
-
----
-
 ## ✨ Features
 
 - Mobile-friendly toggle animation
