@@ -1,0 +1,141 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: aliceblue;
+}
+
+.course-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: black;
+  padding: 100px;
+  font-weight: bold;
+
+} 
+
+.circle_loading {
+  width: 250px;
+  height: 250px;
+  border:1px solid rgba(0,0,0,.5);
+  border-left-color: rgb(18, 140, 189);
+  border-radius: 50%;
+  margin-bottom: 9.375rem;
+  position: relative;
+  display: inline-block;
+  animation: loading 1.2s infinite linear;
+}
+@keyframes loading {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+
+  } 
+}
+.circle_checked::after {
+  content: "";
+  width: 30px;
+  height: 150px;
+  position: absolute;
+  opacity: 1;
+  /* border: 1px solid black; */
+  border-top:2px solid rgb(82, 255, 82);
+  border-right:2px solid rgb(82, 255, 82);
+  transform: rotate(223deg) scaleX(-1);
+  top: 156px;
+  left: 63px;
+  transform-origin: left top;
+  animation: checked 0.8s linear normal;
+}
+@keyframes checked {
+  0%{
+    opacity: 1;
+    width: 0;
+    height: 0;
+  }
+  20%{
+    opacity: 1;
+    width: 30px;
+    height: 0;
+  }
+  100%{
+    opacity: 1;
+    width: 30px;
+    height: 150px;
+  }
+}
+.border-complete{
+  border:1px solid rgb(82, 255, 82);
+  animation:none !important;
+  transition: border-color 0.3 ease-out;
+}
+.circle_checked{
+  display: none;
+}
+p{
+  text-align: center;
+}
+button {
+  text-align: center;
+  border: 1px solid rgb(0, 255, 106);
+  width: 115px;
+  height: 30px;
+  border-radius:5px;
+  background-color:rgb(0, 255, 106);
+  font-size: 16px;
+  color: rgb(65, 65, 65);
+  font-weight: bold;
+  padding-top: 2px;
+  transition: all 0.1s linear;
+}
+
+button::after{
+  content: "";
+  position: absolute;
+  display: block;
+  width: 75px;
+  height: 1px;
+  background-color:black;
+  margin-left:20px ;
+  transition: all 0.5s linear;
+ transform: translate(0px,0px);
+ margin-top: 1px;
+ display: none;
+}
+button:hover{
+  width: 120px;
+  height: 35px;
+  font-size: 17px;
+}
+button:hover::after{
+  animation: button_show 3 ease normal;
+  display: block;
+}
+@keyframes button_show{
+  0%{
+    transform: translate(0px,0px);
+  }
+  20%{
+    transform: translate(18px,0.2px);
+  }
+  40%{
+    transform: translate(36px,0.4px);
+  }
+  60%{
+    transform: translate(56px,0.6px);
+  }
+  80%{
+    transform: translate(72px,0.8px);
+  }
+  100%{
+    transform: translate(75px,1px);
+  }
+}
